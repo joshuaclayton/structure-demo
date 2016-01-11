@@ -24,11 +24,13 @@ feature "Smoke test" do
 
     visit organization_path(thoughtbot)
     expect(page).to have_css "li", text: "person@example.com"
+    expect(page).not_to have_css ".welcome"
 
     create(:user, email: "person1@example.com", organization: thoughtbot)
 
     visit organization_path(thoughtbot)
     expect(page).to have_css "li", text: "person@example.com"
     expect(page).to have_css "li", text: "person1@example.com"
+    expect(page).to have_css ".welcome"
   end
 end
