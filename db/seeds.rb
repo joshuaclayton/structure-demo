@@ -5,3 +5,14 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+organization = Organization.first_or_create(name: "thoughtbot")
+organization_scope = User.where(organization: organization)
+organization_scope.where(email: "person@example.com", name: "John Doe").first_or_create
+
+(1..5).each do |teammate_incrementer|
+  organization_scope.where(
+    email: "person#{teammate_incrementer}@example.com",
+    name: "Person #{teammate_incrementer}"
+  ).first_or_create
+end
