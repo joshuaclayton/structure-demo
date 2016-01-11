@@ -4,10 +4,4 @@
   </div>
 <% end %>
 
-<ul>
-  <% @organization.users.each do |user| %>
-    <li>
-      <%= user.email %>
-    </li>
-  <% end %>
-</ul>
+<%= render "users/list" %>

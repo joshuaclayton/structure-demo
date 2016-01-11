@@ -7,7 +7,5 @@ class OrganizationsController < ApplicationController
     else
       @new_users = []
     end
-
-    session[:last_viewed] = Time.current
   end
 end
