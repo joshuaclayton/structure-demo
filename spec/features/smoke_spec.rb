@@ -51,6 +51,7 @@ feature "Smoke test" do
 
     create(:user, email: "person2@example.com", organization: thoughtbot)
 
+    visit organization_path(github)
     visit organization_path(thoughtbot)
 
     expect(page).to have_css ".welcome"

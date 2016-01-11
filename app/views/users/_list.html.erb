@@ -1,7 +1,5 @@
-<% session[:last_viewed] = Time.current %>
-
 <ul>
-  <% @organization.users.each do |user| %>
+  <% organization.users.each do |user| %>
     <li>
       <%= user.email %>
     </li>
