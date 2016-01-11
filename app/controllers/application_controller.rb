@@ -2,11 +2,11 @@ class ApplicationController < ActionController::Base
   include Authentication
   protect_from_forgery with: :exception
 
-  before_filter :find_organization
-
-  def find_organization
+  def current_user_organization
     if current_user
-      @organization = current_user.organization
+      @_current_user_organization ||= current_user.organization
     end
   end
+
+  helper_method :current_user_organization
 end

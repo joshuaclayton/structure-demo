@@ -9,7 +9,7 @@
 <body>
 
 
-  <%= render "header" %>
+  <%= render "header", user: current_user, organization: current_user_organization %>
   <%= yield %>
 
 </body>

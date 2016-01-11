@@ -1,9 +1,9 @@
 <header>
   <h1>App Name</h1>
 
-  <% if current_user %>
+  <% if user %>
     <h2>
-      Welcome, <%= current_user.name %> from <%= @organization.name %>
+      Welcome, <%= user.name %> from <%= organization.name %>
     </h2>
   <% end %>
 </header>
